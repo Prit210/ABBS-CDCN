@@ -1,0 +1,11 @@
+{
+  "model_type": "CDCNpp",
+  "theta": 0.7,
+  "weights_path": "weights/best_cdcnpp.pth",
+  "threshold": 0.56,
+  "best_accuracy": 0.8772,
+  "input_size": [256, 256],
+  "depth_map_size": [32, 32],
+  "face_detector": "haar",
+  "device": "cpu"
+}

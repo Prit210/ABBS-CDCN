@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 886.146 1260.8999999999999" width="886.146" height="1260.8999999999999" style="--bg:#18181B;--fg:#F4F4F5;--line:#71717A;--muted:#A1A1AA;--surface:#27272A;--border:#3F3F46;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<g class="subgraph" data-id="Frontend" data-label="Frontend (Browser / Web Client)">
+  <rect x="105" y="1013.0999999999998" width="741.146" height="181.8" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="105" y="1013.0999999999998" width="741.146" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="117" y="1027.1" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Frontend (Browser / Web Client)</text>
+</g>
+<g class="subgraph" data-id="Backend" data-label="Backend API (FastAPI / Flask)">
+  <rect x="152.7945" y="58" width="365.90399999999994" height="826.7999999999998" rx="0" ry="0" fill="var(--_group-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="152.7945" y="58" width="365.90399999999994" height="28" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="164.7945" y="72" font-size="12" font-weight="600" fill="var(--_text-sec)" dy="4.199999999999999">Backend API (FastAPI / Flask)</text>
+</g>
+<polyline class="edge" data-from="Snapshot" data-to="Endpoint" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="HTTP POST Payload" points="691.7225,1178.8999999999999 691.7224999999999,1212.8999999999999 95,1212.8999999999999 95,40.000000000000114 335.74649999999997,40.000000000000114 335.74649999999997,102.00000000000011" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="JSON" data-to="Display" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="JSON Response" points="335.74649999999997,868.7999999999998 335.74649999999997,1057.1" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Cam" data-to="Snapshot" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="691.7224999999999,1093.9999999999998 691.7225,1141.9999999999998" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Endpoint" data-to="Decode" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.74649999999997,138.9 335.74649999999997,186.9" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Decode" data-to="FaceDetector" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.74649999999997,223.8 335.74649999999997,271.8" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="FaceDetector" data-to="CropLoop" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.74649999999997,325.6 335.74649999999997,373.6" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CropLoop" data-to="SquareCrop" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.74649999999997,410.5 335.74649999999997,458.5" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="SquareCrop" data-to="Preprocess" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.74649999999997,495.4 335.74649999999997,543.4" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Preprocess" data-to="CDCN" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.74649999999997,580.3 335.74649999999997,628.3" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="CDCN" data-to="Score" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.74649999999997,682.0999999999999 335.74649999999997,730.0999999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="Score" data-to="JSON" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="335.74649999999997,783.8999999999999 335.74649999999997,831.8999999999999" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="Snapshot" data-to="Endpoint" data-label="HTTP POST Payload">
+  <rect x="36.00000000000001" y="933.8" width="117.442" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="94.721" y="948.9499999999999" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">HTTP POST Payload</text>
+</g>
+<g class="edge-label" data-from="JSON" data-to="Display" data-label="JSON Response">
+  <rect x="287.24649999999997" y="933.7999999999998" width="96.65200000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="335.5725" y="948.9499999999998" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">JSON Response</text>
+</g>
+<g class="node" data-id="Cam" data-label="Webcam Stream (HTML5 Video)" data-shape="rectangle">
+  <rect x="578.4929999999999" y="1057.1" width="226.45899999999995" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="691.7224999999999" y="1075.55" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Webcam Stream (HTML5 Video)</text>
+</g>
+<g class="node" data-id="Snapshot" data-label="Capture Frame (Canvas to Base64/Blob)" data-shape="rectangle">
+  <rect x="553.299" y="1141.9999999999998" width="276.847" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="691.7225" y="1160.4499999999998" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Capture Frame (Canvas to Base64/Blob)</text>
+</g>
+<g class="node" data-id="Display" data-label="Draw Bounding Boxes (Green=Real, Red=Spoof) + Depth Heatmaps" data-shape="rectangle">
+  <rect x="121" y="1057.1" width="429.49299999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="1075.55" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Draw Bounding Boxes (Green=Real, Red=Spoof) + Depth Heatmaps</text>
+</g>
+<g class="node" data-id="Endpoint" data-label="POST /predict Endpoint" data-shape="rectangle">
+  <rect x="246.22899999999998" y="102" width="179.03499999999994" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="120.45" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">POST /predict Endpoint</text>
+</g>
+<g class="node" data-id="Decode" data-label="Decode &amp; Convert to RGB Image" data-shape="rectangle">
+  <rect x="223.25799999999998" y="186.9" width="224.97699999999995" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="205.35000000000002" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Decode &amp; Convert to RGB Image</text>
+</g>
+<g class="node" data-id="FaceDetector" data-label="Face Detector (MTCNN / OpenCV)
+Extract all bounding boxes" data-shape="rectangle">
+  <rect x="216.21849999999998" y="271.8" width="239.05599999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="298.7" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="335.74649999999997" dy="-3.9000000000000012">Face Detector (MTCNN / OpenCV)</tspan><tspan x="335.74649999999997" dy="16.900000000000002">Extract all bounding boxes</tspan></text>
+</g>
+<g class="node" data-id="CropLoop" data-label="Iterate Over Every Detected Face" data-shape="rectangle">
+  <rect x="216.9595" y="373.6" width="237.57399999999996" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="392.05" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Iterate Over Every Detected Face</text>
+</g>
+<g class="node" data-id="SquareCrop" data-label="Square Aspect Ratio Crop &amp; Boundary Clamp" data-shape="rectangle">
+  <rect x="184.35549999999995" y="458.5" width="302.78200000000004" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="476.95" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Square Aspect Ratio Crop &amp; Boundary Clamp</text>
+</g>
+<g class="node" data-id="Preprocess" data-label="Resize to 256x256 &amp; Normalize to [-1, 1]" data-shape="rectangle">
+  <rect x="206.58550000000002" y="543.4" width="258.3219999999999" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="561.85" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Resize to 256x256 &amp; Normalize to [-1, 1]</text>
+</g>
+<g class="node" data-id="CDCN" data-label="CDCN++ Model Inference
+(Pretrained Weights: CDCNpp_nuaap_100_e-4.pth)" data-shape="rectangle">
+  <rect x="168.7945" y="628.3" width="333.90399999999994" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="655.1999999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="335.74649999999997" dy="-3.9000000000000012">CDCN++ Model Inference</tspan><tspan x="335.74649999999997" dy="16.900000000000002">(Pretrained Weights: CDCNpp_nuaap_100_e-4.pth)</tspan></text>
+</g>
+<g class="node" data-id="Score" data-label="Compute Depth Map &amp; Mean Score
+score &gt;= 0.5: Real | score &lt; 0.5: Spoof" data-shape="rectangle">
+  <rect x="206.5855" y="730.0999999999999" width="258.32199999999995" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="756.9999999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="335.74649999999997" dy="-3.9000000000000012">Compute Depth Map &amp; Mean Score</tspan><tspan x="335.74649999999997" dy="16.900000000000002">score &gt;= 0.5: Real | score &lt; 0.5: Spoof</tspan></text>
+</g>
+<g class="node" data-id="JSON" data-label="Bundle Results for All Faces" data-shape="rectangle">
+  <rect x="232.52049999999997" y="831.8999999999999" width="206.452" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="335.74649999999997" y="850.3499999999999" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">Bundle Results for All Faces</text>
+</g>
+</svg>
